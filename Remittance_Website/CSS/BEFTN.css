@@ -1,0 +1,40 @@
+﻿.BEFTNName{text-align: right}
+.BEFTNName td
+{
+    border: none;
+    text-align: left;
+    padding: 2px;
+    white-space:nowrap;
+    vertical-align:top;
+    font-size:small;
+    font-weight:normal;
+    font-family:Tahoma;
+}
+.BEFTNName tr:hover
+{
+    background-color:White !important;
+}
+
+.BEFTNName div
+{    
+    border: solid 3px #6089B5;
+    background-color: White;
+    color: Black;   
+    font-size:small; 
+    -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);  
+    -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8); 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color='#000000')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color='#000000');
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.BEFTNLabel
+{
+    cursor: default;
+}
+.BEFTNLabel:hoder
+{
+    border: solid 1px silver;
+    background-color: Silver;
+}

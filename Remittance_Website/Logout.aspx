@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Remittance.Logout" CodeFile="Logout.aspx.cs" %>

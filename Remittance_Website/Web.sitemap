@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode>
+    
+    <siteMapNode url="" title="Home" description="" roles="*" >
+      <siteMapNode url="Default.aspx#" title="Home" description="" roles="*" />
+      <siteMapNode url="PasswordChange.aspx" title="Change Password" description="" roles="*" />
+      <siteMapNode url="LogOut.aspx" title="Logout" description="" roles="*" />
+    </siteMapNode>
+    <siteMapNode url="" title="Remittance" description="" roles="*" >
+      
+       <siteMapNode url="RiaOfficePickup.aspx" title="Ria Office Pickup" description="" roles="ADMIN,USER" />
+      <siteMapNode url="Remittance_Add.aspx" title="Add Remittance" description="" roles="ADMIN,USER" />
+      <siteMapNode url="Remittance_Browse.aspx" title="Browse" description="" roles="ADMIN,USER" />
+      <siteMapNode url="Remittance_Browse_HO.aspx" title="Browse HO" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="Remittance_Show.aspx" title="Goto ID" description="" roles="ADMIN,USER" />
+      <siteMapNode url="Paid_Grid.aspx" title="Paid Grid" description="" roles="ADMIN,USER" />
+      <siteMapNode url="SummaryHO.aspx" title="Summary HO" description="Payment Summary Report Branch wise" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="SummaryBR.aspx" title="Summary BR" description="Payment Summary Report Ex-House wise" roles="ADMIN,USER" />
+    </siteMapNode>
+    <siteMapNode url="" title="Export" description="" roles="ADMIN,BEFTN_EXPORT,FLORA_EXPORT,RTGS_EXPORT" >
+      <siteMapNode url="BEFTN_Export.aspx?type=BEFTN" title="BEFTN Export" description="" roles="ADMIN,BEFTN_EXPORT" />      
+      <siteMapNode url="BEFTN_Download_History.aspx" title="BEFTN Export History" description="" roles="ADMIN,BEFTN_EXPORT" />
+      <siteMapNode url="BEFTN_Export.aspx?type=RTGS" title="RTGS Export" description="" roles="ADMIN,RTGS_EXPORT" />
+      <siteMapNode url="RTGS_Download_History.aspx" title="RTGS Export History" description="" roles="ADMIN,RTGS_EXPORT" />
+      <siteMapNode url="Flora_Export_Count.aspx" title="Flora Export Count" description="" roles="ADMIN,FLORA_EXPORT" />
+      <siteMapNode url="Flora_Export.aspx" title="Flora Export" description="" roles="ADMIN,FLORA_EXPORT" />
+      <siteMapNode url="Flora_Download_History.aspx" title="Flora Export History" description="" roles="ADMIN,FLORA_EXPORT" />
+      <siteMapNode url="MM_Export.aspx" title="t-cash Export" description="" roles="ADMIN,MM_EXPORT" />
+      <siteMapNode url="MM_Download_History.aspx" title="t-cash Export History" description="" roles="ADMIN,MM_EXPORT" />
+      <siteMapNode url="Flora_IC_Export.aspx" title="Flora IC Export" description="" roles="" />
+    </siteMapNode>
+    
+    <siteMapNode url="" title="Process" description="" roles="*" branch="1" >
+      <siteMapNode url="HO_Bulk_Change.aspx" title="Bulk Return" description="" roles="ADMIN,USER" branch="1" />      
+    </siteMapNode>
+    
+    <siteMapNode url="" title="History" description="" roles="*" branch="1" >
+      <siteMapNode url="ChangeHistoryLog.aspx" title="Remittance History" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="UnpaidHistoryLog.aspx" title="Unpaid Mark History" description="" roles="ADMIN,USER" branch="1" />
+    </siteMapNode>
+    
+    <siteMapNode url="" title="Data" description="" roles="ADMIN,UPLOAD" >
+      <siteMapNode url="Upload.aspx" title="Upload Data" description="" roles="ADMIN,UPLOAD" />
+      <siteMapNode url="Upload_Web.aspx" title="Upload Data Web" description="" roles="ADMIN,UPLOAD" />
+      <siteMapNode url="Upload_Log.aspx" title="Upload Data Log" description="" roles="ADMIN,UPLOAD" />
+      <siteMapNode url="Upload_Summary.aspx" title="Upload Data Summary" description="" roles="ADMIN,UPLOAD" />
+      <siteMapNode url="ShowBatch.aspx" title="Show Batch" description="" roles="ADMIN,UPLOAD" />
+      <siteMapNode url="Sample_Files.aspx" title="Sample Files" Data="" description="" roles="ADMIN,UPLOAD" />
+     
+    </siteMapNode>
+
+    <siteMapNode url="" title="Incentive" description="" roles="ADMIN" >
+      <siteMapNode url="FxCurrency_Rate.aspx" title="Ex-Rate" description="" roles="ADMIN" />
+    </siteMapNode>
+
+    <siteMapNode url="" title="Reports" description="" roles="ADMIN,USER" >
+      <siteMapNode url="Cancel_Grid.aspx" title="Cancel Grid" Data="" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="Return_Grid.aspx" title="Return Grid" Data="" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="RIT_Reporting.aspx" title="RIT Report" Data="" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="Country_Wise_Summary_Report.aspx" title="Country wise Summary" Data="" description="" roles="ADMIN,USER" branch="1,17" />
+      <siteMapNode url="District_Wise_Summary_Report.aspx" title="District wise Summary" Data="" description="" roles="ADMIN,USER" branch="1,17" />
+      <siteMapNode url="District_Country_Wise_Summary_Report.aspx" title="District-Country wise Summary" Data="" description="" roles="" />
+      <siteMapNode url="ID_Wise_Summary_Report.aspx" title="ID wise Summary" Data="" description="" roles="ADMIN,USER" branch="1,17" />
+      <siteMapNode url="Bank_Wise_Summary_Report.aspx" title="Bank wise Summary" Data="" description="" roles="ADMIN,USER" branch="1,17" />
+    </siteMapNode>
+
+    <siteMapNode url="" title="RDS API" description="" roles="ADMIN,USER" branch="1" >
+      <siteMapNode url="APIBankDeposit.aspx" title="Bank Deposit Orders Receive" description="" roles="ADMIN,USER" />
+    </siteMapNode>
+    
+    <siteMapNode url="" title="Ria" description="" roles="ADMIN,USER" branch="1" >
+        <siteMapNode url="RiaBankDeposit.aspx" title="Ria Dashboard" description="" roles="ADMIN,USER" branch="1" />      
+        <siteMapNode url="RiaOrderCencelResponses.aspx" title="Ria Order Cencel Responses" description="" roles="ADMIN,USER" branch="1" />   
+        <!--<siteMapNode url="RiaPaidResponses.aspx" title="Ria Paid Responses" description="" roles="ADMIN,USER" branch="1" />   -->
+    <siteMapNode url="RiaSummaryReport.aspx" title="Ria Summary Report" description="" roles="ADMIN,USER" branch="1" /> 
+    </siteMapNode>
+
+    <siteMapNode url="" title="Transfast" description="" roles="ADMIN,USER" branch="1" >
+      <siteMapNode url="TfOrderStatus.aspx" title="Order Status" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="TfDashboard.aspx" title="Transfast Dashboard" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="TfComplaints.aspx" title="Complaints Status Update" description="" roles="ADMIN,USER" branch="1" />
+    </siteMapNode>
+    
+    <siteMapNode url="" title="Admin" description="" roles="ADMIN,USER" branch="1" >
+      <siteMapNode url="Comments_Browse.aspx" title="Comments" description="" roles="ADMIN,USER" branch="1" />
+      <siteMapNode url="PaymentMethods_List.aspx" title="Payment Methods" Data="" description="" roles="ADMIN" />
+      <siteMapNode url="PaymentMethod_Status.aspx" title="Status" Data="" description="" roles="ADMIN" />
+      <siteMapNode url="ExHouse.aspx" title="Ex-Houses" Data="" description="" roles="ADMIN" branch="1" />
+      <siteMapNode url="ExHouse_RSA_Keys.aspx" title="RSA Keys" Data="" description="" roles="ADMIN" branch="1" dept="90" />
+      <siteMapNode url="Branch_Mapping.aspx" title="Branch Mapping" Data="" description="" roles="ADMIN" branch="1" />
+      <siteMapNode url="FxRate.aspx" title="Fx Rate" Data="" description="" roles="" />
+      <siteMapNode url="Branches.aspx" title="Branches" Data="" description="" roles="" />
+      <siteMapNode url="Update_History.aspx" title="Update History" Data="" description="" roles="ADMIN" />
+      <siteMapNode url="App_Users.aspx" title="App Users" Data="" description="" roles="ADMIN" />
+    </siteMapNode>
+    
+    <siteMapNode url="" title="Help" description="" roles="*">
+      <siteMapNode url="Downloads/Remittance-Form.pdf" title="Remittance Form" description="" roles="*" target="_blank" />
+      <siteMapNode url="ExchangeHousesInformation.aspx" title="Exchange House Info" description="" roles="*" target="_blank" />      
+      <siteMapNode url="https://intraweb4.tblbd.com/blog/738" title="Blog: How to Use?" description="" roles="*" target="_blank" />     
+    </siteMapNode>
+    <siteMapNode url="" title="User Manual" description="" roles="*">      
+      <siteMapNode url="Downloads/User-Manual.pdf" title="Foreign Remittance System" description="" roles="*" target="_blank" />
+      <siteMapNode url="Downloads/NEC_Money_Transfer_UK.pdf" title="NEC Money Transfer Spot cash (UK)" description="" roles="*" target="_blank" />
+      <siteMapNode url="Downloads/Placid_Express.pdf" title="Placid Express" description="" roles="*" target='_blank' />
+      <siteMapNode url="Downloads/RIA.pdf" title="Ria Fx Online" description="" roles="*" target='_blank' />
+      <siteMapNode url="Downloads/Western_Union.pdf" title="Western Union Point Of Sale (WUPOS)" description="" roles="*" target='_blank' />
+      <siteMapNode url="Downloads/Xpress_Money.pdf" title="Xpress Money Online" description="" roles="*" target='_blank' />
+      <siteMapNode url="Downloads/Instant_Cash_Global_Money_Transfer.pdf" title="Instant Cash (Global Money Transfer)" description="" roles="*" target='_blank' />
+    </siteMapNode>
+    <siteMapNode url="" title="" description="" roles="*">
+      <siteMapNode url="Flora_IC_Download.aspx" title="" description="" roles="*" branch="1" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

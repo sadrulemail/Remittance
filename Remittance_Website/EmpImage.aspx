@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Remittance.EmpImage" CodeFile="EmpImage.aspx.cs" %> 

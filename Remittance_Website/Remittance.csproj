@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2C7FE06-B1E9-4375-B31B-7C2C04AA0CD7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Remittance</RootNamespace>
+    <AssemblyName>Remittance</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.725, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Request_Process\Request_Process_Portal\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=2.8.0.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel, Version=2.0.1.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="skmControls2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\skmControls2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Users.aspx" />
+    <Content Include="Banklogo\010.jpg" />
+    <Content Include="Banklogo\015.jpg" />
+    <Content Include="Banklogo\020.jpg" />
+    <Content Include="Banklogo\025.jpg" />
+    <Content Include="Banklogo\030.jpg" />
+    <Content Include="Banklogo\035.jpg" />
+    <Content Include="Banklogo\040.jpg" />
+    <Content Include="Banklogo\047.jpg" />
+    <Content Include="Banklogo\055.jpg" />
+    <Content Include="Banklogo\060.jpg" />
+    <Content Include="Banklogo\065.jpg" />
+    <Content Include="Banklogo\070.jpg" />
+    <Content Include="Banklogo\075.jpg" />
+    <Content Include="Banklogo\080.JPG" />
+    <Content Include="Banklogo\085.jpg" />
+    <Content Include="Banklogo\090.jpg" />
+    <Content Include="Banklogo\095.jpg" />
+    <Content Include="Banklogo\100.jpg" />
+    <Content Include="Banklogo\105.jpg" />
+    <Content Include="Banklogo\110.jpg" />
+    <Content Include="Banklogo\115.jpg" />
+    <Content Include="Banklogo\120.jpg" />
+    <Content Include="Banklogo\125.jpg" />
+    <Content Include="Banklogo\130.jpg" />
+    <Content Include="Banklogo\135.jpg" />
+    <Content Include="Banklogo\140.jpg" />
+    <Content Include="Banklogo\145.jpg" />
+    <Content Include="Banklogo\150.jpg" />
+    <Content Include="Banklogo\155.jpg" />
+    <Content Include="Banklogo\160.jpg" />
+    <Content Include="Banklogo\165.jpg" />
+    <Content Include="Banklogo\170.jpg" />
+    <Content Include="Banklogo\175.jpg" />
+    <Content Include="Banklogo\180.jpg" />
+    <Content Include="Banklogo\185.jpg" />
+    <Content Include="Banklogo\190.jpg" />
+    <Content Include="Banklogo\195.jpg" />
+    <Content Include="Banklogo\200.jpg" />
+    <Content Include="Banklogo\205.jpg" />
+    <Content Include="Banklogo\210.jpg" />
+    <Content Include="Banklogo\215.jpg" />
+    <Content Include="Banklogo\220.jpg" />
+    <Content Include="Banklogo\225.jpg" />
+    <Content Include="Banklogo\230.jpg" />
+    <Content Include="Banklogo\235.jpg" />
+    <Content Include="Banklogo\240.jpg" />
+    <Content Include="Banklogo\245.jpg" />
+    <Content Include="Banklogo\250.jpg" />
+    <Content Include="Banklogo\255.jpg" />
+    <Content Include="Banklogo\260.jpg" />
+    <Content Include="Banklogo\265.jpg" />
+    <Content Include="Banklogo\270.jpg" />
+    <Content Include="Banklogo\275.jpg" />
+    <Content Include="Banklogo\276.jpg" />
+    <Content Include="Banklogo\280.jpg" />
+    <Content Include="Banklogo\285.jpg" />
+    <Content Include="BEFTN.ascx" />
+    <Content Include="BEFTNService.asmx" />
+    <Content Include="BEFTN_Download.aspx" />
+    <Content Include="BEFTN_Download_History.aspx" />
+    <Content Include="BEFTN_Export.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxMin.dll" />
+    <Content Include="bin\EPPlus.dll" />
+    <Content Include="bin\Excel.dll" />
+    <Content Include="bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\skmControls2.dll" />
+    <Content Include="Cancel_Grid.aspx" />
+    <Content Include="ChangeHistoryLog.aspx" />
+    <Content Include="Comments_Browse.aspx" />
+    <Content Include="Country_Wise_Summary_Report.aspx" />
+    <Content Include="CSS\dd.css" />
+    <Content Include="District_Country_Wise_Summary_Report.aspx" />
+    <Content Include="District_Wise_Summary_Report.aspx" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\keys.png" />
+    <Content Include="Return_Grid.aspx" />
+    <Content Include="RIT_Reporting.aspx" />
+    <Content Include="CR_BR1.aspx" />
+    <Content Include="CR_BR2.aspx" />
+    <Content Include="CSS\BEFTN.css" />
+    <Content Include="CSS\EMP.css" />
+    <Content Include="CSS\jquery.alerts.css" />
+    <Content Include="CSS\jquery.autocomplete.css" />
+    <Content Include="CSS\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="CSS\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="CSS\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="CSS\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="CSS\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="CSS\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="CSS\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="CSS\smoothness\jquery-ui-1.8.22.custom.css" />
+    <Content Include="CSS\StyleSheet.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="EMP.ascx" />
+    <Content Include="EmpImage.aspx" />
+    <Content Include="ExchangeHousesInformation.aspx" />
+    <Content Include="ExHouse.aspx" />
+    <Content Include="Flora_Download.aspx" />
+    <Content Include="Flora_Download_History.aspx" />
+    <Content Include="Flora_Export.aspx" />
+    <Content Include="Flora_Export_Count.aspx" />
+    <Content Include="Flora_IC_Download.aspx" />
+    <Content Include="Flora_IC_Export.aspx" />
+    <Content Include="FxRate.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\000.gif" />
+    <Content Include="Images\00f.gif" />
+    <Content Include="Images\0c0.gif" />
+    <Content Include="Images\0ff.gif" />
+    <Content Include="Images\add.gif" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\alert\help.gif" />
+    <Content Include="Images\alert\important.gif" />
+    <Content Include="Images\alert\info.gif" />
+    <Content Include="Images\alert\title.gif" />
+    <Content Include="Images\All.jpg" />
+    <Content Include="Images\attachment.gif" />
+    <Content Include="Images\attachment.png" />
+    <Content Include="Images\bg002.gif" />
+    <Content Include="Images\bg1.gif" />
+    <Content Include="Images\bg2.gif" />
+    <Content Include="Images\bg3.gif" />
+    <Content Include="Images\bg4.gif" />
+    <Content Include="Images\bg5.gif" />
+    <Content Include="Images\bg6.gif" />
+    <Content Include="Images\bg7.gif" />
+    <Content Include="Images\bg8.gif" />
+    <Content Include="Images\c0c.gif" />
+    <Content Include="Images\c0f.gif" />
+    <Content Include="Images\cancel.jpg" />
+    <Content Include="Images\ccc.gif" />
+    <Content Include="Images\ccf.gif" />
+    <Content Include="Images\cf0.gif" />
+    <Content Include="Images\cff.gif" />
+    <Content Include="Images\checkbox.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\close_pop.gif" />
+    <Content Include="Images\comment.png" />
+    <Content Include="Images\content-bkg.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\CubeView.gif" />
+    <Content Include="Images\edit-label.png" />
+    <Content Include="Images\email_logo.jpg" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\Excel2007.PNG" />
+    <Content Include="Images\ext\attach.gif" />
+    <Content Include="Images\ext\doc.gif" />
+    <Content Include="Images\ext\generic.gif" />
+    <Content Include="Images\ext\pdf.gif" />
+    <Content Include="Images\ext\ppt.gif" />
+    <Content Include="Images\ext\txt.gif" />
+    <Content Include="Images\ext\xls.gif" />
+    <Content Include="Images\ext\zip.gif" />
+    <Content Include="Images\f00.gif" />
+    <Content Include="Images\fc0.gif" />
+    <Content Include="Images\fcc.gif" />
+    <Content Include="Images\fcf.gif" />
+    <Content Include="Images\ff0.gif" />
+    <Content Include="Images\fff.gif" />
+    <Content Include="Images\filter_cancel_icon.jpg" />
+    <Content Include="Images\First.gif" />
+    <Content Include="Images\HandleGrip.png" />
+    <Content Include="Images\header-bg.png" />
+    <Content Include="Images\Home.gif" />
+    <Content Include="Images\Home.jpg" />
+    <Content Include="Images\Last.gif" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\main_search_100.png" />
+    <Content Include="Images\modal_close.gif" />
+    <Content Include="Images\new_window.png" />
+    <Content Include="Images\next-sprite.png" />
+    <Content Include="Images\Next.gif" />
+    <Content Include="Images\NoFace.jpg" />
+    <Content Include="Images\open.png" />
+    <Content Include="Images\open_new_window.png" />
+    <Content Include="Images\oubs-link-in-new-window-16 %281%29.png" />
+    <Content Include="Images\oubs-link-in-new-window-16.png" />
+    <Content Include="Images\paid.png" />
+    <Content Include="Images\pop_arrow.png" />
+    <Content Include="Images\Previous.gif" />
+    <Content Include="Images\Print_Log.png" />
+    <Content Include="Images\processing.gif" />
+    <Content Include="Images\radio.png" />
+    <Content Include="Images\Receipt.png" />
+    <Content Include="Images\refresh.jpg" />
+    <Content Include="Images\Refresh.png" />
+    <Content Include="Images\rms.jpg" />
+    <Content Include="Images\rollback.png" />
+    <Content Include="Images\search-bg.png" />
+    <Content Include="Images\Shade1.jpg" />
+    <Content Include="Images\Shade2.jpg" />
+    <Content Include="Images\Shade3.jpg" />
+    <Content Include="Images\Shade4.jpg" />
+    <Content Include="Images\Shade5.jpg" />
+    <Content Include="Images\Shade6.jpg" />
+    <Content Include="Images\Shade7.jpg" />
+    <Content Include="Images\super-header-bg.png" />
+    <Content Include="Images\Switch_button.png" />
+    <Content Include="Images\TabBack.png" />
+    <Content Include="Images\tick-big.png" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\tick_right.gif" />
+    <Content Include="Images\tool_shade.gif" />
+    <Content Include="Images\transparent.gif" />
+    <Content Include="Images\t_Bullet.gif" />
+    <Content Include="Images\v_history.png" />
+    <Content Include="Images\waiting.gif" />
+    <Content Include="intrawebService.asmx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MM_Download.aspx" />
+    <Content Include="MM_Download_History.aspx" />
+    <Content Include="MM_Export.aspx" />
+    <Content Include="MyControl.ascx" />
+    <Content Include="Paid_Grid.aspx" />
+    <Content Include="PasswordChange.aspx" />
+    <Content Include="PaymentMethods_History.aspx" />
+    <Content Include="PaymentMethods_List.aspx" />
+    <Content Include="PaymentMethod_Status.aspx" />
+    <Content Include="Print_Receipt.aspx" />
+    <Content Include="Remittance_Browse.aspx" />
+    <Content Include="Remittance_Show.aspx" />
+    <Content Include="Sample_Files.aspx" />
+    <Content Include="script\TrustBankChart.js" />
+    <Content Include="script\FusionCharts.HC.Charts.js" />
+    <Content Include="script\FusionCharts.HC.js" />
+    <Content Include="script\FusionCharts.HC.PowerCharts.js" />
+    <Content Include="script\FusionCharts.jqueryplugin.js" />
+    <Content Include="script\FusionCharts.js" />
+    <Content Include="script\FusionChartsExportComponent.js" />
+    <Content Include="script\jquery-1.7.2.min.js" />
+    <Content Include="script\jquery-migrate-1.2.1.js" />
+    <Content Include="script\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="script\jquery-ui-sliderAccess.js" />
+    <Content Include="script\jquery-ui-timepicker-addon.js" />
+    <Content Include="script\jquery.alerts.js" />
+    <Content Include="script\jquery.autocomplete.js" />
+    <Content Include="script\jquery.cookie.js" />
+    <Content Include="script\jquery.Jcrop.js" />
+    <Content Include="script\jquery.Jcrop.min.js" />
+    <Content Include="script\jquery.timeago.js" />
+    <Content Include="script\jquery.watermark.js" />
+    <Content Include="script\tooltips.js" />
+    <Content Include="script\TrustBank.js" />
+    <Content Include="script\updatepanelhook.fusioncharts.js" />
+    <Content Include="ShowBatch.aspx" />
+    <Content Include="Summary.aspx" />
+    <Content Include="SummaryBR.aspx" />
+    <Content Include="SummaryBR_View.aspx" />
+    <Content Include="SummaryHO.aspx" />
+    <Content Include="SummaryHO_View.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="TrustControl.ascx" />
+    <Content Include="UnpaidHistoryLog.aspx" />
+    <Content Include="Upload.aspx" />
+    <Content Include="Upload_Log.aspx" />
+    <Content Include="Upload_Summary.aspx" />
+    <Content Include="userServices.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Users.aspx.designer.cs">
+      <DependentUpon>App_Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BEFTN.ascx.designer.cs">
+      <DependentUpon>BEFTN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BEFTNService.cs">
+      <DependentUpon>BEFTNService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BEFTN_Download.aspx.designer.cs">
+      <DependentUpon>BEFTN_Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BEFTN_Download_History.aspx.designer.cs">
+      <DependentUpon>BEFTN_Download_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BEFTN_Export.aspx.designer.cs">
+      <DependentUpon>BEFTN_Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cancel_Grid.aspx.cs">
+      <DependentUpon>Cancel_Grid.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Cancel_Grid.aspx.designer.cs">
+      <DependentUpon>Cancel_Grid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeHistoryLog.aspx.designer.cs">
+      <DependentUpon>ChangeHistoryLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comments_Browse.aspx.designer.cs">
+      <DependentUpon>Comments_Browse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="District_Country_Wise_Summary_Report.aspx.cs">
+      <DependentUpon>District_Country_Wise_Summary_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="District_Country_Wise_Summary_Report.aspx.designer.cs">
+      <DependentUpon>District_Country_Wise_Summary_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FusionCharts.cs" />
+    <Compile Include="MasterPageChart.master.cs">
+      <DependentUpon>MasterPageChart.master</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MasterPageChart.master.designer.cs">
+      <DependentUpon>MasterPageChart.master</DependentUpon>
+    </Compile>
+    <Compile Include="Country_Wise_Summary_Report.aspx.cs">
+      <DependentUpon>Country_Wise_Summary_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Country_Wise_Summary_Report.aspx.designer.cs">
+      <DependentUpon>Country_Wise_Summary_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="District_Wise_Summary_Report.aspx.cs">
+      <DependentUpon>District_Wise_Summary_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="District_Wise_Summary_Report.aspx.designer.cs">
+      <DependentUpon>District_Wise_Summary_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Return_Grid.aspx.cs">
+      <DependentUpon>Return_Grid.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Return_Grid.aspx.designer.cs">
+      <DependentUpon>Return_Grid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RIT_Reporting.aspx.cs">
+      <DependentUpon>RIT_Reporting.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="RIT_Reporting.aspx.designer.cs">
+      <DependentUpon>RIT_Reporting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CR_BR1.aspx.designer.cs">
+      <DependentUpon>CR_BR1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CR_BR2.aspx.designer.cs">
+      <DependentUpon>CR_BR2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EMP.ascx.designer.cs">
+      <DependentUpon>EMP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpImage.aspx.designer.cs">
+      <DependentUpon>EmpImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeHousesInformation.aspx.designer.cs">
+      <DependentUpon>ExchangeHousesInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExHouse.aspx.designer.cs">
+      <DependentUpon>ExHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_Download.aspx.designer.cs">
+      <DependentUpon>Flora_Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_Download_History.aspx.designer.cs">
+      <DependentUpon>Flora_Download_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_Export.aspx.designer.cs">
+      <DependentUpon>Flora_Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_Export_Count.aspx.designer.cs">
+      <DependentUpon>Flora_Export_Count.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_IC_Download.aspx.designer.cs">
+      <DependentUpon>Flora_IC_Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flora_IC_Export.aspx.designer.cs">
+      <DependentUpon>Flora_IC_Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FxRate.aspx.designer.cs">
+      <DependentUpon>FxRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="intrawebService.cs">
+      <DependentUpon>intrawebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MM_Download.aspx.designer.cs">
+      <DependentUpon>MM_Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MM_Download_History.aspx.designer.cs">
+      <DependentUpon>MM_Download_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MM_Export.aspx.designer.cs">
+      <DependentUpon>MM_Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Users.aspx.cs">
+      <DependentUpon>App_Users.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="BEFTN.ascx.cs">
+      <DependentUpon>BEFTN.ascx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="BEFTN_Download.aspx.cs">
+      <DependentUpon>BEFTN_Download.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="BEFTN_Download_History.aspx.cs">
+      <DependentUpon>BEFTN_Download_History.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="BEFTN_Export.aspx.cs">
+      <DependentUpon>BEFTN_Export.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="ChangeHistoryLog.aspx.cs">
+      <DependentUpon>ChangeHistoryLog.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Comments_Browse.aspx.cs">
+      <DependentUpon>Comments_Browse.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="CR_BR1.aspx.cs">
+      <DependentUpon>CR_BR1.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="CR_BR2.aspx.cs">
+      <DependentUpon>CR_BR2.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="EMP.ascx.cs">
+      <DependentUpon>EMP.ascx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="EmpImage.aspx.cs">
+      <DependentUpon>EmpImage.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="ExchangeHousesInformation.aspx.cs">
+      <DependentUpon>ExchangeHousesInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="ExHouse.aspx.cs">
+      <DependentUpon>ExHouse.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_Download.aspx.cs">
+      <DependentUpon>Flora_Download.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_Download_History.aspx.cs">
+      <DependentUpon>Flora_Download_History.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_Export.aspx.cs">
+      <DependentUpon>Flora_Export.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_Export_Count.aspx.cs">
+      <DependentUpon>Flora_Export_Count.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_IC_Download.aspx.cs">
+      <DependentUpon>Flora_IC_Download.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Flora_IC_Export.aspx.cs">
+      <DependentUpon>Flora_IC_Export.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="FxRate.aspx.cs">
+      <DependentUpon>FxRate.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MM_Download.aspx.cs">
+      <DependentUpon>MM_Download.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MM_Download_History.aspx.cs">
+      <DependentUpon>MM_Download_History.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MM_Export.aspx.cs">
+      <DependentUpon>MM_Export.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MyControl.ascx.cs">
+      <DependentUpon>MyControl.ascx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="MyControl.ascx.designer.cs">
+      <DependentUpon>MyControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Paid_Grid.aspx.cs">
+      <DependentUpon>Paid_Grid.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Paid_Grid.aspx.designer.cs">
+      <DependentUpon>Paid_Grid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethods_History.aspx.cs">
+      <DependentUpon>PaymentMethods_History.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="PaymentMethods_History.aspx.designer.cs">
+      <DependentUpon>PaymentMethods_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethods_List.aspx.cs">
+      <DependentUpon>PaymentMethods_List.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="PaymentMethods_List.aspx.designer.cs">
+      <DependentUpon>PaymentMethods_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod_Status.aspx.cs">
+      <DependentUpon>PaymentMethod_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="PaymentMethod_Status.aspx.designer.cs">
+      <DependentUpon>PaymentMethod_Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Receipt.aspx.cs">
+      <DependentUpon>Print_Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Print_Receipt.aspx.designer.cs">
+      <DependentUpon>Print_Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remittance_Browse.aspx.cs">
+      <DependentUpon>Remittance_Browse.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Remittance_Browse.aspx.designer.cs">
+      <DependentUpon>Remittance_Browse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Remittance_Show.aspx.cs">
+      <DependentUpon>Remittance_Show.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Remittance_Show.aspx.designer.cs">
+      <DependentUpon>Remittance_Show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CR_BR1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_BR1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\CR_BR2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_BR2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Print_Receipt_IC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Print_Receipt_IC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Print_Receipt_Others.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Print_Receipt_Others.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Sample_Files.aspx.cs">
+      <DependentUpon>Sample_Files.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Sample_Files.aspx.designer.cs">
+      <DependentUpon>Sample_Files.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowBatch.aspx.cs">
+      <DependentUpon>ShowBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="ShowBatch.aspx.designer.cs">
+      <DependentUpon>ShowBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryBR.aspx.cs">
+      <DependentUpon>SummaryBR.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="SummaryBR.aspx.designer.cs">
+      <DependentUpon>SummaryBR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryBR_View.aspx.cs">
+      <DependentUpon>SummaryBR_View.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="SummaryBR_View.aspx.designer.cs">
+      <DependentUpon>SummaryBR_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryHO.aspx.cs">
+      <DependentUpon>SummaryHO.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="SummaryHO.aspx.designer.cs">
+      <DependentUpon>SummaryHO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryHO_View.aspx.cs">
+      <DependentUpon>SummaryHO_View.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="SummaryHO_View.aspx.designer.cs">
+      <DependentUpon>SummaryHO_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TblMasterPage.master.cs">
+      <DependentUpon>TblMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="TblMasterPage.master.designer.cs">
+      <DependentUpon>TblMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrustControl.ascx.cs">
+      <DependentUpon>TrustControl.ascx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="TrustControl.ascx.designer.cs">
+      <DependentUpon>TrustControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UnpaidHistoryLog.aspx.cs">
+      <DependentUpon>UnpaidHistoryLog.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="UnpaidHistoryLog.aspx.designer.cs">
+      <DependentUpon>UnpaidHistoryLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload_Log.aspx.cs">
+      <DependentUpon>Upload_Log.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Upload_Log.aspx.designer.cs">
+      <DependentUpon>Upload_Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload_Summary.aspx.cs">
+      <DependentUpon>Upload_Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeFile</SubType>
+    </Compile>
+    <Compile Include="Upload_Summary.aspx.designer.cs">
+      <DependentUpon>Upload_Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userServices.cs">
+      <DependentUpon>userServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Old_App_Code\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPageChart.master" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <Content Include="BEFTN_Search.ashx" />
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Downloads\Remittance-Form.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Downloads\User-Manual.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="MasterPage.master" />
+    <None Include="Samples\Custom_Format.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Search_EMP_ALL.ashx" />
+    <Content Include="TblMasterPage.master" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\CR_BR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_BR1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CR_BR2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_BR2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Print_Receipt_IC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Print_Receipt_IC.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Print_Receipt_Others.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Print_Receipt_Others.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39577</DevelopmentServerPort>
+          <DevelopmentServerVPath>/Remittance/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

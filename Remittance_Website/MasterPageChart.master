@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Remittance.MasterPageChart" CodeFile="MasterPageChart.master.cs" %>
+
+<%@ Register Src="~/TrustControl.ascx" TagName="TrustControl" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="CSS/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/jquery.alerts.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/dd.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/Stylesheet.css?rand=5.1.1" rel="stylesheet" type="text/css" />
+
+    <script src="script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="script/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+    <script src="script/jquery.watermark.js" type="text/javascript"></script>
+    <script src="script/jquery.autocomplete.js" type="text/javascript"></script>
+    <script src="script/jquery.timeago.js" type="text/javascript"></script>
+    <script src="script/jquery.alerts.js?rand=5.1" type="text/javascript"></script>
+    <script src="script/FusionCharts.js" type="text/javascript"></script>
+    <script src="script/FusionCharts.jqueryplugin.js" type="text/javascript"></script>
+    <script src="script/TrustBankChart.js?rand=5.1" type="text/javascript"></script>
+
+    <title>Trust Bank Limited</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+    <link rel="shortcut icon" href="" runat="server" id="FavLogo" />
+<body bgcolor="#fffffb" text="Black" style="font-family: Tahoma" alink="#ffffff">
+    <form id="form1" runat="server">
+    <div id="MenuArea" style="background-color: #FFFFFF; font-size: small;">
+        <table style="width: 100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2">
+                    <a href="../Default.aspx">
+                        <asp:Image ID="Image1" runat="server" BorderWidth="0px" ImageUrl="~/Images/logo.jpg" Width="226px" Height="40px"
+                            meta:resourcekey="Image1Resource1" /></a>
+                </td>
+                <td rowspan="2">
+                </td>
+                <td nowrap="nowrap" style="text-align: right; font-size: 26px; font-weight: bolder;
+                    font-family: Arial, Helvetica, sans-serif; color: #006600;">
+                    <asp:Label ID="ApplicationName" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 10px">
+                    &nbsp;
+                </td>
+                <td>
+                    <asp:Label ID="BranchName" runat="server" Font-Bold="True" Font-Overline="False"
+                        Font-Size="Small" ForeColor="#408566"></asp:Label>
+                </td>
+                <td nowrap="nowrap" style="text-align: right;">
+                    <asp:Label ID="ServerDate" runat="server" Font-Bold="True" Font-Italic="False" ForeColor="#408566"
+                        Style="font-size: small"></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <asp:Panel ID="MenuPanel" CssClass="" runat="server">
+        <table style="border-color: #808080; border-width: thin; border-style: dotted none none none;"
+            bgcolor="#F7F6F3">
+            <tr>
+                <td style="width: 100%;height:23px">
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"
+                        EnableViewState="False" />
+                    <div align="left" id="MenuDiv" class="hidden">
+                        <asp:Menu ID="MainMenu" runat="server" CssClass="MainMenu"
+                                DataSourceID="SiteMapDataSource1" ViewStateMode="Disabled"
+                                ItemWrap="True" meta:resourcekey="MainMenuResource1" OnMenuItemDataBound="MainMenu_MenuItemDataBound"
+                                Orientation="Horizontal" RenderingMode="List">
+                                <StaticMenuItemStyle CssClass="MenuMain" />
+                                <StaticHoverStyle CssClass="MenuMain_Hover" />
+                                <DynamicMenuItemStyle CssClass="MenuSub" />
+                                <DynamicHoverStyle CssClass="MenuSub_Hover" />
+
+                                <StaticItemTemplate>
+                                    <%# Eval("Text") %>
+                                </StaticItemTemplate>
+                                <DynamicItemTemplate>
+                                    <%# Eval("Text", "&raquo; {0}")%>
+                                </DynamicItemTemplate>
+                            </asp:Menu>
+                    </div>
+                </td>
+                <td nowrap="nowrap">
+                    <div style="font-size: small">
+                        ID:
+                        <asp:Label ID="lblLoginUser" runat="server" Style="font-weight: 700" Text="UserName"
+                            meta:resourcekey="lblLoginUserResource1"></asp:Label>
+                        (<asp:Label ID="lblRole" runat="server" Text="Role" OnLoad="lblRole_Load"></asp:Label>)
+                        <asp:HyperLink ID="hypLogin" runat="server" NavigateUrl="~/Login.aspx" meta:resourcekey="hypLoginResource1">Log In</asp:HyperLink>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <div style="text-align: right; font-weight: bolder; font-size: small;">
+        <asp:Label ID="EmpName" runat="server" Text=""></asp:Label></div>
+    <div class="MainTitle ui-corner-all Shadow" align="center">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <div>
+                Item Title</div>
+        </asp:ContentPlaceHolder>
+    </div>
+    <div style="margin: 15px 10px 100px 10px">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <div>
+            </div>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

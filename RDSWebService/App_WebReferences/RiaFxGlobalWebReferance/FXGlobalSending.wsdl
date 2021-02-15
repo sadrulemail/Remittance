@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="CES.Services.FXGlobal" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FXGlobalSending" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="CES.Services.FXGlobal" location="http://stagingfxglobalwebsvcnocert.riaenvia.net:9771/FXGlobalSending.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="basicHttpBindingNoCert_RiaAsSender" type="i0:IRiaAsSender">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OP_VerifyOrderForPayout">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/OP_VerifyOrderForPayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/OP_ConfirmOrderPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_VoidOrderPaidConfirmation">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/OP_VoidOrderPaidConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_ListOrdersByName">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/OP_ListOrdersByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendersCustSvcMsgs">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetSendersCustSvcMsgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancellationRequests">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetCancellationRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrdersForDownload">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetOrdersForDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/InputPayersCustSvcMsgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputOrderStatusNotices">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/InputOrderStatusNotices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputCancelRequestResponses">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/InputCancelRequestResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyOrders">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetDailyOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyOrdersSummary">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetDailyOrdersSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumerationValues">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/GetEnumerationValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="CES.Services.FXGlobal/IRiaAsSender/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FXGlobalSending">
+    <wsdl:port name="basicHttpBindingNoCert_RiaAsSender" binding="tns:basicHttpBindingNoCert_RiaAsSender">
+      <soap:address location="http://stagingfxglobalwebsvcnocert.riaenvia.net:9771/FXGlobalSending.svc/Binding_Basic_NoCert" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

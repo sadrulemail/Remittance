@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RiaDataSet" targetNamespace="http://tempuri.org/RiaDataSet.xsd" xmlns:mstns="http://tempuri.org/RiaDataSet.xsd" xmlns="http://tempuri.org/RiaDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RiaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="RiaDataSet" msprop:Generator_UserDSName="RiaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ria_InputOrderStatusNotices" msprop:Generator_TableClassName="Ria_InputOrderStatusNoticesDataTable" msprop:Generator_TableVarName="tableRia_InputOrderStatusNotices" msprop:Generator_TablePropName="Ria_InputOrderStatusNotices" msprop:Generator_RowDeletingName="Ria_InputOrderStatusNoticesRowDeleting" msprop:Generator_RowChangingName="Ria_InputOrderStatusNoticesRowChanging" msprop:Generator_RowEvHandlerName="Ria_InputOrderStatusNoticesRowChangeEventHandler" msprop:Generator_RowDeletedName="Ria_InputOrderStatusNoticesRowDeleted" msprop:Generator_UserTableName="Ria_InputOrderStatusNotices" msprop:Generator_RowChangedName="Ria_InputOrderStatusNoticesRowChanged" msprop:Generator_RowEvArgName="Ria_InputOrderStatusNoticesRowChangeEvent" msprop:Generator_RowClassName="Ria_InputOrderStatusNoticesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PCOrderNo" msprop:Generator_ColumnVarNameInTable="columnPCOrderNo" msprop:Generator_ColumnPropNameInRow="PCOrderNo" msprop:Generator_ColumnPropNameInTable="PCOrderNoColumn" msprop:Generator_UserColumnName="PCOrderNo" type="xs:string" minOccurs="0" />
+              <xs:element name="SCOrderNo" msprop:Generator_ColumnVarNameInTable="columnSCOrderNo" msprop:Generator_ColumnPropNameInRow="SCOrderNo" msprop:Generator_ColumnPropNameInTable="SCOrderNoColumn" msprop:Generator_UserColumnName="SCOrderNo" type="xs:string" minOccurs="0" />
+              <xs:element name="PCNotificationID" msprop:Generator_ColumnVarNameInTable="columnPCNotificationID" msprop:Generator_ColumnPropNameInRow="PCNotificationID" msprop:Generator_ColumnPropNameInTable="PCNotificationIDColumn" msprop:Generator_UserColumnName="PCNotificationID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProcessDate" msprop:Generator_ColumnVarNameInTable="columnProcessDate" msprop:Generator_ColumnPropNameInRow="ProcessDate" msprop:Generator_ColumnPropNameInTable="ProcessDateColumn" msprop:Generator_UserColumnName="ProcessDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NotificationCode" msprop:Generator_ColumnVarNameInTable="columnNotificationCode" msprop:Generator_ColumnPropNameInRow="NotificationCode" msprop:Generator_ColumnPropNameInTable="NotificationCodeColumn" msprop:Generator_UserColumnName="NotificationCode" type="xs:string" minOccurs="0" />
+              <xs:element name="NotificationDesc" msprop:Generator_ColumnVarNameInTable="columnNotificationDesc" msprop:Generator_ColumnPropNameInRow="NotificationDesc" msprop:Generator_ColumnPropNameInTable="NotificationDescColumn" msprop:Generator_UserColumnName="NotificationDesc" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

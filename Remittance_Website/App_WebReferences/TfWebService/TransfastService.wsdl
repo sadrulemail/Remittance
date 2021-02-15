@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ibanking.tblbd.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ibanking.tblbd.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ibanking.tblbd.com/">
+      <s:element name="DownloadAllInvoices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThirdPartyBD" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadAllInvoicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadAllInvoicesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayInvoices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayInvoicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PayInvoicesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComplaintsInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComplaintsInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComplaintsInvoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TfCatalogMethods">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TfPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TfCatalogMethodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TfCatalogMethodsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvoiceStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TfPin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThirdPartyBD" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvoiceStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadInvoicesForPayout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ThirdPartyBD" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadInvoicesForPayoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadInvoicesForPayoutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DownloadAllInvoicesSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadAllInvoices" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAllInvoicesSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadAllInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesSoapIn">
+    <wsdl:part name="parameters" element="tns:PayInvoices" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesSoapOut">
+    <wsdl:part name="parameters" element="tns:PayInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:ComplaintsInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:ComplaintsInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsSoapIn">
+    <wsdl:part name="parameters" element="tns:TfCatalogMethods" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsSoapOut">
+    <wsdl:part name="parameters" element="tns:TfCatalogMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:InvoiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:InvoiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadInvoicesForPayout" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadInvoicesForPayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAllInvoicesHttpGetIn">
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAllInvoicesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesHttpGetIn">
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceHttpGetIn">
+    <wsdl:part name="RID" type="s:string" />
+    <wsdl:part name="ErrorCode" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsHttpGetIn">
+    <wsdl:part name="TfPin" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="ErrorCode" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpGetIn">
+    <wsdl:part name="TfPin" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutHttpGetIn">
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAllInvoicesHttpPostIn">
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadAllInvoicesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesHttpPostIn">
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PayInvoicesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceHttpPostIn">
+    <wsdl:part name="RID" type="s:string" />
+    <wsdl:part name="ErrorCode" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ComplaintsInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsHttpPostIn">
+    <wsdl:part name="TfPin" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+    <wsdl:part name="ErrorCode" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TfCatalogMethodsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpPostIn">
+    <wsdl:part name="TfPin" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutHttpPostIn">
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="ThirdPartyBD" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadInvoicesForPayoutHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TransfastServiceSoap">
+    <wsdl:operation name="DownloadAllInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download invoice new or Previously downloaded Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success</wsdl:documentation>
+      <wsdl:input message="tns:DownloadAllInvoicesSoapIn" />
+      <wsdl:output message="tns:DownloadAllInvoicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Pay the specified Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:PayInvoicesSoapIn" />
+      <wsdl:output message="tns:PayInvoicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Create new Complaints with a specified TfPin&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:ComplaintsInvoiceSoapIn" />
+      <wsdl:output message="tns:ComplaintsInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: TfCatalogMethods&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:TfCatalogMethodsSoapIn" />
+      <wsdl:output message="tns:TfCatalogMethodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Invoice Status&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:InvoiceStatusSoapIn" />
+      <wsdl:output message="tns:InvoiceStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download New Orders&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:DownloadInvoicesForPayoutSoapIn" />
+      <wsdl:output message="tns:DownloadInvoicesForPayoutSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransfastServiceHttpGet">
+    <wsdl:operation name="DownloadAllInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download invoice new or Previously downloaded Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success</wsdl:documentation>
+      <wsdl:input message="tns:DownloadAllInvoicesHttpGetIn" />
+      <wsdl:output message="tns:DownloadAllInvoicesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Pay the specified Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:PayInvoicesHttpGetIn" />
+      <wsdl:output message="tns:PayInvoicesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Create new Complaints with a specified TfPin&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:ComplaintsInvoiceHttpGetIn" />
+      <wsdl:output message="tns:ComplaintsInvoiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: TfCatalogMethods&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:TfCatalogMethodsHttpGetIn" />
+      <wsdl:output message="tns:TfCatalogMethodsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Invoice Status&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:InvoiceStatusHttpGetIn" />
+      <wsdl:output message="tns:InvoiceStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download New Orders&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:DownloadInvoicesForPayoutHttpGetIn" />
+      <wsdl:output message="tns:DownloadInvoicesForPayoutHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransfastServiceHttpPost">
+    <wsdl:operation name="DownloadAllInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download invoice new or Previously downloaded Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success</wsdl:documentation>
+      <wsdl:input message="tns:DownloadAllInvoicesHttpPostIn" />
+      <wsdl:output message="tns:DownloadAllInvoicesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Pay the specified Invoice&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:PayInvoicesHttpPostIn" />
+      <wsdl:output message="tns:PayInvoicesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Create new Complaints with a specified TfPin&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:ComplaintsInvoiceHttpPostIn" />
+      <wsdl:output message="tns:ComplaintsInvoiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: TfCatalogMethods&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:TfCatalogMethodsHttpPostIn" />
+      <wsdl:output message="tns:TfCatalogMethodsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Invoice Status&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:InvoiceStatusHttpPostIn" />
+      <wsdl:output message="tns:InvoiceStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Download New Orders&lt;br&gt;Returns:&lt;br&gt;Response Code=1: Success&lt;br&gt;Response Code=-2: Invalid keycode</wsdl:documentation>
+      <wsdl:input message="tns:DownloadInvoicesForPayoutHttpPostIn" />
+      <wsdl:output message="tns:DownloadInvoicesForPayoutHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransfastServiceSoap" type="tns:TransfastServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadAllInvoices">
+      <soap:operation soapAction="https://ibanking.tblbd.com/DownloadAllInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <soap:operation soapAction="https://ibanking.tblbd.com/PayInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <soap:operation soapAction="https://ibanking.tblbd.com/ComplaintsInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <soap:operation soapAction="https://ibanking.tblbd.com/TfCatalogMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <soap:operation soapAction="https://ibanking.tblbd.com/InvoiceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <soap:operation soapAction="https://ibanking.tblbd.com/DownloadInvoicesForPayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfastServiceSoap12" type="tns:TransfastServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DownloadAllInvoices">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/DownloadAllInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/PayInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/ComplaintsInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/TfCatalogMethods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/InvoiceStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/DownloadInvoicesForPayout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfastServiceHttpGet" type="tns:TransfastServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DownloadAllInvoices">
+      <http:operation location="/DownloadAllInvoices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <http:operation location="/PayInvoices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <http:operation location="/ComplaintsInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <http:operation location="/TfCatalogMethods" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <http:operation location="/InvoiceStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <http:operation location="/DownloadInvoicesForPayout" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransfastServiceHttpPost" type="tns:TransfastServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DownloadAllInvoices">
+      <http:operation location="/DownloadAllInvoices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PayInvoices">
+      <http:operation location="/PayInvoices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComplaintsInvoice">
+      <http:operation location="/ComplaintsInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TfCatalogMethods">
+      <http:operation location="/TfCatalogMethods" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <http:operation location="/InvoiceStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadInvoicesForPayout">
+      <http:operation location="/DownloadInvoicesForPayout" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransfastService">
+    <wsdl:port name="TransfastServiceSoap" binding="tns:TransfastServiceSoap">
+      <soap:address location="http://localhost:60090/TransfastService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfastServiceSoap12" binding="tns:TransfastServiceSoap12">
+      <soap12:address location="http://localhost:60090/TransfastService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfastServiceHttpGet" binding="tns:TransfastServiceHttpGet">
+      <http:address location="http://localhost:60090/TransfastService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransfastServiceHttpPost" binding="tns:TransfastServiceHttpPost">
+      <http:address location="http://localhost:60090/TransfastService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

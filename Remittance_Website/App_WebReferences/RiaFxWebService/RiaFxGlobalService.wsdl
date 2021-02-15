@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://ibanking.tblbd.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://ibanking.tblbd.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://ibanking.tblbd.com/">
+      <s:element name="OP_VerifyOrderForpayout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BeneAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OP_VerifyOrderForpayoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OP_VerifyOrderForpayoutResult" type="tns:OP_Verify_Order" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OP_Verify_Order">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Required_Fields" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransRefID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OP_ConfirmOrderPaid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefID_Verify" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequiredFieldXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OP_ConfirmOrderPaidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OP_ConfirmOrderPaidResult" type="tns:OP_Paid_Order" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OP_Paid_Order">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Done" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RollBackRequired" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseText" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InputPayersCustSvcMsgs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InputPayersCustSvcMsgsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputPayersCustSvcMsgsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_GetOrderForDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_GetOrderForDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_GetOrderForDownloadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_GetCancelationRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_GetCancelationRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_GetCancelationRequestsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputCancelRequestResponses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseTypeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputCancelRequestResponsesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_InputCancelRequestResponsesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputCancelRequestResponsesOrderWise">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResponseTypeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputCancelRequestResponsesOrderWiseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_InputCancelRequestResponsesOrderWiseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesReceive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefIdDownload" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesReceiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_InputOrderStatusNoticesReceiveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesPaidPublish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BatchNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesPaidPublishResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_InputOrderStatusNoticesPaidPublishResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesCancelToRia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoticeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BD_InputOrderStatusNoticesCancelToRiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BD_InputOrderStatusNoticesCancelToRiaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ria_GetDailyOrdersReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ria_GetDailyOrdersReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ria_GetDailyOrdersReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ria_GetDailyOrdersSummaryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ria_GetDailyOrdersSummaryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ria_GetDailyOrdersSummaryReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OP_Verify_Order" type="tns:OP_Verify_Order" />
+      <s:element name="OP_Paid_Order" type="tns:OP_Paid_Order" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OP_VerifyOrderForpayoutSoapIn">
+    <wsdl:part name="parameters" element="tns:OP_VerifyOrderForpayout" />
+  </wsdl:message>
+  <wsdl:message name="OP_VerifyOrderForpayoutSoapOut">
+    <wsdl:part name="parameters" element="tns:OP_VerifyOrderForpayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="OP_ConfirmOrderPaidSoapIn">
+    <wsdl:part name="parameters" element="tns:OP_ConfirmOrderPaid" />
+  </wsdl:message>
+  <wsdl:message name="OP_ConfirmOrderPaidSoapOut">
+    <wsdl:part name="parameters" element="tns:OP_ConfirmOrderPaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InputPayersCustSvcMsgsSoapIn">
+    <wsdl:part name="parameters" element="tns:InputPayersCustSvcMsgs" />
+  </wsdl:message>
+  <wsdl:message name="InputPayersCustSvcMsgsSoapOut">
+    <wsdl:part name="parameters" element="tns:InputPayersCustSvcMsgsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetOrderForDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_GetOrderForDownload" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetOrderForDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_GetOrderForDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetCancelationRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_GetCancelationRequests" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetCancelationRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_GetCancelationRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_InputCancelRequestResponses" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_InputCancelRequestResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesOrderWiseSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_InputCancelRequestResponsesOrderWise" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesOrderWiseSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_InputCancelRequestResponsesOrderWiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesReceiveSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesReceive" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesReceiveSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesReceiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesPaidPublishSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesPaidPublish" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesPaidPublishSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesPaidPublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesCancelToRiaSoapIn">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesCancelToRia" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesCancelToRiaSoapOut">
+    <wsdl:part name="parameters" element="tns:BD_InputOrderStatusNoticesCancelToRiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersReportSoapIn">
+    <wsdl:part name="parameters" element="tns:Ria_GetDailyOrdersReport" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersReportSoapOut">
+    <wsdl:part name="parameters" element="tns:Ria_GetDailyOrdersReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:Ria_GetDailyOrdersSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:Ria_GetDailyOrdersSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="OP_VerifyOrderForpayoutHttpPostIn">
+    <wsdl:part name="PIN" type="s:string" />
+    <wsdl:part name="BeneAmount" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OP_VerifyOrderForpayoutHttpPostOut">
+    <wsdl:part name="Body" element="tns:OP_Verify_Order" />
+  </wsdl:message>
+  <wsdl:message name="OP_ConfirmOrderPaidHttpPostIn">
+    <wsdl:part name="RefID_Verify" type="s:string" />
+    <wsdl:part name="Pin" type="s:string" />
+    <wsdl:part name="RequiredFieldXml" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OP_ConfirmOrderPaidHttpPostOut">
+    <wsdl:part name="Body" element="tns:OP_Paid_Order" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsHttpPostIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+    <wsdl:part name="Pin" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InputPayersCustSvcMsgsHttpPostIn">
+    <wsdl:part name="OrderNo" type="s:string" />
+    <wsdl:part name="Pin" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InputPayersCustSvcMsgsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetOrderForDownloadHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetOrderForDownloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetCancelationRequestsHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_GetCancelationRequestsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesHttpPostIn">
+    <wsdl:part name="RID" type="s:string" />
+    <wsdl:part name="ResponseTypeCode" type="s:string" />
+    <wsdl:part name="Comment" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesOrderWiseHttpPostIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="ResponseTypeCode" type="s:string" />
+    <wsdl:part name="Comment" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputCancelRequestResponsesOrderWiseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesReceiveHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="RefIdDownload" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesReceiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesPaidPublishHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="BatchNo" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesPaidPublishHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesCancelToRiaHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="RID" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="NoticeType" type="s:string" />
+    <wsdl:part name="Reason" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BD_InputOrderStatusNoticesCancelToRiaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersReportHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="ReportDate" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersReportHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersSummaryReportHttpPostIn">
+    <wsdl:part name="BranchCode" type="s:string" />
+    <wsdl:part name="BranchName" type="s:string" />
+    <wsdl:part name="ReportDate" type="s:string" />
+    <wsdl:part name="EmpID" type="s:string" />
+    <wsdl:part name="KeyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Ria_GetDailyOrdersSummaryReportHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RiaFxGlobalServiceSoap">
+    <wsdl:operation name="OP_VerifyOrderForpayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Verify Order for payout&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:OP_VerifyOrderForpayoutSoapIn" />
+      <wsdl:output message="tns:OP_VerifyOrderForpayoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Confirm Order&lt;br&gt;Returns:&lt;br&gt;Done=1: Success&lt;br&gt;ResponseCode=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:OP_ConfirmOrderPaidSoapIn" />
+      <wsdl:output message="tns:OP_ConfirmOrderPaidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Checking Order Details&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderDetailsSoapIn" />
+      <wsdl:output message="tns:GetOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Checking Order Details&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:InputPayersCustSvcMsgsSoapIn" />
+      <wsdl:output message="tns:InputPayersCustSvcMsgsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetOrderForDownload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task:Bank Deposit Get Order For Download pending Orders&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_GetOrderForDownloadSoapIn" />
+      <wsdl:output message="tns:BD_GetOrderForDownloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetCancelationRequests">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Bank Deposit Cancelation Requests Download&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;2: Cancel Order not Found.&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_GetCancelationRequestsSoapIn" />
+      <wsdl:output message="tns:BD_GetCancelationRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Cancel Accepted/Rejected Request  against Remittance ID&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;ResponseTypeCode 1000: Cancel&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputCancelRequestResponsesSoapIn" />
+      <wsdl:output message="tns:BD_InputCancelRequestResponsesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponsesOrderWise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Cancel Accepted/Rejected Request  against Order ID&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;ResponseTypeCode 1000: Cancel&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputCancelRequestResponsesOrderWiseSoapIn" />
+      <wsdl:output message="tns:BD_InputCancelRequestResponsesOrderWiseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesReceive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices Receive&lt;br&gt;Returns:&lt;br&gt;1: Success</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesReceiveSoapIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesReceiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesPaidPublish">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices For Paid mark to ria and publish mark to Remilist&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesPaidPublishSoapIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesPaidPublishSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesCancelToRia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices mark CANCELED/REJECTED  to ria&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;-4: Invalid Type (CANCELED/REJECTED)&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesCancelToRiaSoapIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesCancelToRiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: GetDailyOrders for  daily report&lt;br&gt;Returns:&lt;br&gt;Xml&lt;br&gt;-2: Invalid Key Code</wsdl:documentation>
+      <wsdl:input message="tns:Ria_GetDailyOrdersReportSoapIn" />
+      <wsdl:output message="tns:Ria_GetDailyOrdersReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersSummaryReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Ria_GetDailyOrdersSummaryReport for  summary report&lt;br&gt;Returns:&lt;br&gt;Xml&lt;br&gt;-2: Invalid Key Code</wsdl:documentation>
+      <wsdl:input message="tns:Ria_GetDailyOrdersSummaryReportSoapIn" />
+      <wsdl:output message="tns:Ria_GetDailyOrdersSummaryReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RiaFxGlobalServiceHttpPost">
+    <wsdl:operation name="OP_VerifyOrderForpayout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Verify Order for payout&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:OP_VerifyOrderForpayoutHttpPostIn" />
+      <wsdl:output message="tns:OP_VerifyOrderForpayoutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Confirm Order&lt;br&gt;Returns:&lt;br&gt;Done=1: Success&lt;br&gt;ResponseCode=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:OP_ConfirmOrderPaidHttpPostIn" />
+      <wsdl:output message="tns:OP_ConfirmOrderPaidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Checking Order Details&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetOrderDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Checking Order Details&lt;br&gt;Returns:&lt;br&gt;Response Code=1000: Success</wsdl:documentation>
+      <wsdl:input message="tns:InputPayersCustSvcMsgsHttpPostIn" />
+      <wsdl:output message="tns:InputPayersCustSvcMsgsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetOrderForDownload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task:Bank Deposit Get Order For Download pending Orders&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_GetOrderForDownloadHttpPostIn" />
+      <wsdl:output message="tns:BD_GetOrderForDownloadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetCancelationRequests">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Bank Deposit Cancelation Requests Download&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;2: Cancel Order not Found.&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_GetCancelationRequestsHttpPostIn" />
+      <wsdl:output message="tns:BD_GetCancelationRequestsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Cancel Accepted/Rejected Request  against Remittance ID&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;ResponseTypeCode 1000: Cancel&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputCancelRequestResponsesHttpPostIn" />
+      <wsdl:output message="tns:BD_InputCancelRequestResponsesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponsesOrderWise">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Cancel Accepted/Rejected Request  against Order ID&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;ResponseTypeCode 1000: Cancel&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputCancelRequestResponsesOrderWiseHttpPostIn" />
+      <wsdl:output message="tns:BD_InputCancelRequestResponsesOrderWiseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesReceive">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices Receive&lt;br&gt;Returns:&lt;br&gt;1: Success</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesReceiveHttpPostIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesReceiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesPaidPublish">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices For Paid mark to ria and publish mark to Remilist&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesPaidPublishHttpPostIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesPaidPublishHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesCancelToRia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Input Order Status Notices mark CANCELED/REJECTED  to ria&lt;br&gt;Returns:&lt;br&gt;1: Success&lt;br&gt;-2: Invalid Key Code&lt;br&gt;-3: Local Database Down&lt;br&gt;-4: Invalid Type (CANCELED/REJECTED)&lt;br&gt;4: Default Fail</wsdl:documentation>
+      <wsdl:input message="tns:BD_InputOrderStatusNoticesCancelToRiaHttpPostIn" />
+      <wsdl:output message="tns:BD_InputOrderStatusNoticesCancelToRiaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: GetDailyOrders for  daily report&lt;br&gt;Returns:&lt;br&gt;Xml&lt;br&gt;-2: Invalid Key Code</wsdl:documentation>
+      <wsdl:input message="tns:Ria_GetDailyOrdersReportHttpPostIn" />
+      <wsdl:output message="tns:Ria_GetDailyOrdersReportHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersSummaryReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service Task: Ria_GetDailyOrdersSummaryReport for  summary report&lt;br&gt;Returns:&lt;br&gt;Xml&lt;br&gt;-2: Invalid Key Code</wsdl:documentation>
+      <wsdl:input message="tns:Ria_GetDailyOrdersSummaryReportHttpPostIn" />
+      <wsdl:output message="tns:Ria_GetDailyOrdersSummaryReportHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RiaFxGlobalServiceSoap" type="tns:RiaFxGlobalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OP_VerifyOrderForpayout">
+      <soap:operation soapAction="https://ibanking.tblbd.com/OP_VerifyOrderForpayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <soap:operation soapAction="https://ibanking.tblbd.com/OP_ConfirmOrderPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap:operation soapAction="https://ibanking.tblbd.com/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <soap:operation soapAction="https://ibanking.tblbd.com/InputPayersCustSvcMsgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetOrderForDownload">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_GetOrderForDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetCancelationRequests">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_GetCancelationRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponses">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_InputCancelRequestResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponsesOrderWise">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_InputCancelRequestResponsesOrderWise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesReceive">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesReceive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesPaidPublish">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesPaidPublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesCancelToRia">
+      <soap:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesCancelToRia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersReport">
+      <soap:operation soapAction="https://ibanking.tblbd.com/Ria_GetDailyOrdersReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersSummaryReport">
+      <soap:operation soapAction="https://ibanking.tblbd.com/Ria_GetDailyOrdersSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RiaFxGlobalServiceSoap12" type="tns:RiaFxGlobalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OP_VerifyOrderForpayout">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/OP_VerifyOrderForpayout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/OP_ConfirmOrderPaid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/GetOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/InputPayersCustSvcMsgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetOrderForDownload">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_GetOrderForDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetCancelationRequests">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_GetCancelationRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponses">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_InputCancelRequestResponses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponsesOrderWise">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_InputCancelRequestResponsesOrderWise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesReceive">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesReceive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesPaidPublish">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesPaidPublish" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesCancelToRia">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/BD_InputOrderStatusNoticesCancelToRia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersReport">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/Ria_GetDailyOrdersReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersSummaryReport">
+      <soap12:operation soapAction="https://ibanking.tblbd.com/Ria_GetDailyOrdersSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RiaFxGlobalServiceHttpPost" type="tns:RiaFxGlobalServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="OP_VerifyOrderForpayout">
+      <http:operation location="/OP_VerifyOrderForpayout" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OP_ConfirmOrderPaid">
+      <http:operation location="/OP_ConfirmOrderPaid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetails">
+      <http:operation location="/GetOrderDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InputPayersCustSvcMsgs">
+      <http:operation location="/InputPayersCustSvcMsgs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetOrderForDownload">
+      <http:operation location="/BD_GetOrderForDownload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_GetCancelationRequests">
+      <http:operation location="/BD_GetCancelationRequests" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponses">
+      <http:operation location="/BD_InputCancelRequestResponses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputCancelRequestResponsesOrderWise">
+      <http:operation location="/BD_InputCancelRequestResponsesOrderWise" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesReceive">
+      <http:operation location="/BD_InputOrderStatusNoticesReceive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesPaidPublish">
+      <http:operation location="/BD_InputOrderStatusNoticesPaidPublish" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BD_InputOrderStatusNoticesCancelToRia">
+      <http:operation location="/BD_InputOrderStatusNoticesCancelToRia" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersReport">
+      <http:operation location="/Ria_GetDailyOrdersReport" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ria_GetDailyOrdersSummaryReport">
+      <http:operation location="/Ria_GetDailyOrdersSummaryReport" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RiaFxGlobalService">
+    <wsdl:port name="RiaFxGlobalServiceSoap" binding="tns:RiaFxGlobalServiceSoap">
+      <soap:address location="http://172.20.1.86:200/Remittance/RiaFxGlobalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RiaFxGlobalServiceSoap12" binding="tns:RiaFxGlobalServiceSoap12">
+      <soap12:address location="http://172.20.1.86:200/Remittance/RiaFxGlobalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RiaFxGlobalServiceHttpPost" binding="tns:RiaFxGlobalServiceHttpPost">
+      <http:address location="http://172.20.1.86:200/Remittance/RiaFxGlobalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

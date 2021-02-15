@@ -1,0 +1,16 @@
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\CR_BR1.rpt
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\CR_BR2.rpt
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\Print_Receipt_IC.rpt
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\Print_Receipt_Others.rpt
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\CR_BR1.cs
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\CR_BR2.cs
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\Print_Receipt_IC.cs
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Reports\Print_Receipt_Others.cs
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Downloads\Remittance-Form.pdf
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Downloads\User-Manual.pdf
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Remittance.dll
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Remittance.pdb
+F:\Projects\Visual Studio 2010\Remittance\Remittance\obj\Debug\Remittance.dll
+F:\Projects\Visual Studio 2010\Remittance\Remittance\obj\Debug\Remittance.pdb
+F:\Projects\Visual Studio 2010\Remittance\Remittance\bin\Samples\Custom_Format.xlsx
+F:\Projects\Visual Studio 2010\Remittance\Remittance\obj\Debug\Remittance.csprojResolveAssemblyReference.cache

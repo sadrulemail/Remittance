@@ -1,0 +1,42 @@
+﻿.UserName{
+    text-align: right;
+}
+.UserName td{
+    border: none;
+    text-align: left;
+    padding: 2px;
+}
+.UserName table
+{
+    border: solid 3px Black;
+    background-color: Black;
+    color: Yellow;
+    -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);  
+    -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.8); 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color='#000000')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color='#000000');
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.UserName tr:hover
+{
+    background-color:Black !important;
+}
+.UserName a:hover
+{
+    text-decoration:none;
+}
+.UserName img
+{
+    border:none;
+}
+.UserLabel
+{
+    cursor: default;
+}
+.UserLabel:hoder
+{
+    border: solid 1px silver;
+    background-color: Silver;
+}

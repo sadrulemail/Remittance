@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Remittance.TblMasterPage" CodeFile="TblMasterPage.master.cs" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <title>Trust Bank Limited</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        a:link {
+	        text-decoration: none;
+	        color:Green;
+        }
+        a:visited {
+	        text-decoration: none;
+	        color:Green;
+        }
+        a:hover {
+	        text-decoration:underline;	        
+	        color:Blue;	        
+        }
+        
+        </style>
+</head>
+<body bgcolor="#fffffb" text="Black" style="font-family:Tahoma">
+    <form id="form1" runat="server">        
+<div id="MenuArea" style="background-color: #FFFFFF">
+    <table class="style1">
+        <tr>
+            <td>
+            <a href="Default.aspx">
+    <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" Width="226px" Height="40px" BorderStyle="None" />
+    </a>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+                </tr>
+            </table>
+</div>            
+<p></p>
+
+    <div class="MainTitle" align="center">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <div>
+                
+                <span lang="en-us">Item Title</span></div>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <br />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+            <div>               
+                </div>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
